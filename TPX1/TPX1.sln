@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingVisualizer", "SortingVisualizer\SortingVisualizer.csproj", "{B511F5D2-5A42-498A-B3D2-4C0C1A315A42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardBattle", "CardBattle\CardBattle.csproj", "{B270EB29-8730-4C9C-8B9D-D523459C5AC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B511F5D2-5A42-498A-B3D2-4C0C1A315A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B511F5D2-5A42-498A-B3D2-4C0C1A315A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B511F5D2-5A42-498A-B3D2-4C0C1A315A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B270EB29-8730-4C9C-8B9D-D523459C5AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B270EB29-8730-4C9C-8B9D-D523459C5AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B270EB29-8730-4C9C-8B9D-D523459C5AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B270EB29-8730-4C9C-8B9D-D523459C5AC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -68,8 +68,6 @@ namespace SortingVisualizer
             var digitLeft = left - (temp.ToString().Length);
             Console.SetCursorPosition(digitLeft < 0 ? 0 : digitLeft, 5);
             Console.Write(temp);
-            
-            Thread.Sleep(400);
         }
 
         public static void DisplaySwap(int[] arr, int i, int j, ref int changes)
