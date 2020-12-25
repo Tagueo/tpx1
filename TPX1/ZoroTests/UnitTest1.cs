@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Polynomial;
 
 namespace ZoroTests
 {   
@@ -8,30 +9,30 @@ namespace ZoroTests
         [Test]
         public void ComputeCovidCasesTest0()
         {
-            Assert.AreEqual(0.6f, Polynomial.Program.ComputeCovidCases(0f), 0.001f);
+            Assert.AreEqual(0.6f, Poly.ComputeCovidCases(0f), 0.001f);
         }
         
         [Test]
         public void ComputeCovidCasesTest1()
         {
-            Assert.AreEqual(0.278495f, Polynomial.Program.ComputeCovidCases(1f), 0.001f);
+            Assert.AreEqual(0.278495f, Poly.ComputeCovidCases(1f), 0.001f);
         }
         
         [Test]
         public void ComputeCovidCasesTest2()
         {
-            Assert.AreEqual(2.31577f, Polynomial.Program.ComputeCovidCases(2f), 0.001f);
+            Assert.AreEqual(2.31577f, Poly.ComputeCovidCases(2f), 0.001f);
         }
         
         [Test]
         public void ComputeCovidCasesTest13()
         {
-            Assert.AreEqual(9.37841f, Polynomial.Program.ComputeCovidCases(13f), 0.001f);
+            Assert.AreEqual(9.37841f, Poly.ComputeCovidCases(13f), 0.001f);
         }
         [Test]
         public void ComputeCovidCasesTest14()
         {
-            Assert.AreEqual(4.8993f, Polynomial.Program.ComputeCovidCases(14f), 0.001f);
+            Assert.AreEqual(4.8993f, Poly.ComputeCovidCases(14f), 0.001f);
         }
         
         
@@ -40,31 +41,31 @@ namespace ZoroTests
         [Test]
         public void ComputePolynomialTest0()
         {
-            Assert.AreEqual(0.6f, Polynomial.Program.ComputePolynomial(0f, coeffs), 0.001f);
+            Assert.AreEqual(0.6f, Poly.ComputePolynomial(0f, coeffs), 0.001f);
         }
         
         [Test]
         public void ComputePolynomialTest1()
         {
-            Assert.AreEqual(0.278495f, Polynomial.Program.ComputePolynomial(1f, coeffs), 0.001f);
+            Assert.AreEqual(0.278495f, Poly.ComputePolynomial(1f, coeffs), 0.001f);
         }
         
         [Test]
         public void ComputePolynomialTest2()
         {
-            Assert.AreEqual(2.31577f, Polynomial.Program.ComputePolynomial(2f, coeffs), 0.001f);
+            Assert.AreEqual(2.31577f, Poly.ComputePolynomial(2f, coeffs), 0.001f);
         }
         
         [Test]
         public void ComputePolynomialTest13()
         {
-            Assert.AreEqual(9.37841f, Polynomial.Program.ComputePolynomial(13f, coeffs), 0.001f);
+            Assert.AreEqual(9.37841f, Poly.ComputePolynomial(13f, coeffs), 0.001f);
         }
         
         [Test]
         public void ComputePolynomialTest14()
         {
-            Assert.AreEqual(4.8993f, Polynomial.Program.ComputePolynomial(14f, coeffs), 0.001f);
+            Assert.AreEqual(4.8993f, Poly.ComputePolynomial(14f, coeffs), 0.001f);
         }
     }
 
