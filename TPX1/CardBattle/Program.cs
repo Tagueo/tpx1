@@ -21,8 +21,6 @@ namespace CardBattle
         
         public static void Main(string[] args)
         {
-            Console.CursorVisible = false;
-            
             Player1.name = Gui.Prompt("Player 1 name :");
             Player2.name = Gui.Prompt("Player 2 name :");
             
@@ -95,7 +93,7 @@ namespace CardBattle
             else
             {
                 Gui.WriteAt("BATAILLE ! Press any key to draw again ...", Console.WindowWidth / 2 - 21, 12);
-                Console.Read();
+                Console.ReadKey();
                 PlayRound(++iteration);
             }
         }

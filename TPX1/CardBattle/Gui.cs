@@ -9,6 +9,7 @@ namespace CardBattle
         // Make the buffer the size of the window to disallow scrolling and make the gui responsive
         private static void Normalize()
         {
+            Console.CursorVisible = false;
             Console.BufferHeight = Console.WindowHeight;
             Console.BufferWidth = Console.WindowWidth;
         }
