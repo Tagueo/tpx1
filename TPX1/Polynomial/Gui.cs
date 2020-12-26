@@ -44,7 +44,7 @@ namespace CardBattle
             }
             
             Console.ResetColor();
-            WriteAt("Select Tab: F1, F2, F3 or ← → | Navigate: ↑ ↓ | Quit: ESC", 0, Console.BufferHeight - 1);
+            WriteAt("Select Tab: F1, F2 or ← → | Load: F4 | Save: F5 | Quit: ESC", 0, Console.BufferHeight - 1);
         }
         
         public static void WriteAt(string str, int left, int top)

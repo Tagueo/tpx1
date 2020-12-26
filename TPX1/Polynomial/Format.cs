@@ -1,7 +1,40 @@
-﻿namespace Polynomial
+﻿using System;
+using System.Globalization;
+
+namespace Polynomial
 {
     public class Format
     {
+        public static float[] StringToFloatArr(string str)
+        {
+            var strArr = str.Split("\n");
+
+            float[] poly = new float[strArr.Length];
+
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                if (strArr[i] != "")
+                {
+                    Console.WriteLine(strArr[i]);
+                    poly[i] = (float) Convert.ToDouble(strArr[i]);
+                }
+            }
+
+            return poly;
+        }
+
+        public static string FloatArrToString(float[] poly)
+        {
+            string res = "";
+            
+            foreach (var f in poly)
+            {
+                res += f.ToString(CultureInfo.DefaultThreadCurrentCulture) + "\n";
+            }
+
+            return res;
+        }
+
         public static string ToSuperScript(string str)
         {
             string res = "";

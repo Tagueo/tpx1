@@ -12,7 +12,7 @@ namespace Polynomial
             
             bool running = true;
             int tab = 0;
-            int tabNumber = 3;
+            int tabNumber = 2;
             
             float[] polynomial = new float[] { };
             float x = 0;
@@ -24,44 +24,42 @@ namespace Polynomial
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.LeftArrow:
-                        tab = tab - 1 < 0 ? 2 : tab - 1;
-                        Console.Clear();
+                        tab = tab - 1 < 0 ? 1 : tab - 1;
                         break;
                     case ConsoleKey.RightArrow:
                         tab = (tab + 1) % tabNumber;
-                        Console.Clear();
                         break;
                     case ConsoleKey.F1:
                     case ConsoleKey.D1:
                         tab = 0;
-                        Console.Clear();
                         break;
                     case ConsoleKey.F2:
                     case ConsoleKey.D2:
                         tab = 1;
-                        Console.Clear();
-                        break;
-                    case ConsoleKey.F3:
-                    case ConsoleKey.D3:
-                        tab = 2;
-                        Console.Clear();
                         break;
                     case ConsoleKey.Enter:
                         switch (tab)
                         {
                             case 0:
                                 float coeff = (float) Convert.ToDouble(Gui.Prompt("Enter a valid coefficient (decimal number):"));
-                                
                                 DrawScreen(tab, polynomial, x);
                                 int exp =  Convert.ToInt32(Gui.Prompt("Enter a valid exponent (integer):"));
+                                
                                 polynomial = Poly.AddCoefficient(polynomial, coeff, exp);
                                 break;
                             case 1:
                                 x = (float) Convert.ToDouble(Gui.Prompt("Enter x (decimal number):"));
-                                ComputeTab(polynomial, x);
-                                DrawScreen(tab, polynomial, x);
                                 break;
                         }
+                        break;
+                    case ConsoleKey.F4:
+                        string path = Gui.Prompt("Load: Enter the file's path:");
+                        string fileContent = IO.ReadFile(path);
+                        polynomial = Format.StringToFloatArr(fileContent);
+                        break;
+                    case ConsoleKey.F5:
+                        path = Gui.Prompt("Save: Enter the file's path:");
+                        IO.WriteFile(path, Format.FloatArrToString(polynomial));
                         break;
                     case ConsoleKey.Escape:
                         running = false;
@@ -82,16 +80,13 @@ namespace Polynomial
                 case 1:
                     ComputeTab(floats, x);
                     break;
-                case 2:
-                    SaveTab(floats);
-                    break;
                 default:
                     i = 0;
                     EditTab(floats);
                     break;
             }
 
-            Gui.Tabs(new[] {"Edit", "Compute", "Save"}, i);
+            Gui.Tabs(new[] {"Edit", "Compute"}, i);
         }
 
         public static void EditTab(float[] polynomial)
@@ -139,6 +134,7 @@ namespace Polynomial
         static void ComputeTab(float[] polynomial, float x = 0)
         {
             string polyFormated = "";
+            int n = 0;
 
             for (int i = polynomial.Length - 1; i >= 0; i--)
             {
@@ -147,7 +143,7 @@ namespace Polynomial
 
                 if (coeff != "0")
                 {
-                    if (i == polynomial.Length - 1)
+                    if (n == 0)
                         if (i == 0)
                             polyFormated += $"{coeff}";
                         else if (i == 1)
@@ -169,6 +165,7 @@ namespace Polynomial
                         else
                             polyFormated += $" + {coeff}x^{exp}";
 
+                    n++;
                 }
             }
 
@@ -177,11 +174,6 @@ namespace Polynomial
             Gui.WriteAt("Press ENTER to select x and compute", 1, 10);
             
             Gui.WriteAt($"Result with x = {x}: {Poly.ComputePolynomial(x, polynomial)}", 1, 12);
-        }
-
-        static void SaveTab(float[] polynomial)
-        {
-            
         }
     }
 }
